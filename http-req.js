@@ -2,18 +2,18 @@ const net = require('net')
 const dns = require('dns')
 
 
-dns.lookup('discord.com', (err, address) => {
+dns.lookup('HOST', (err, address) => {
     if (err) throw err
 
     const socket = net.createConnection({
         host: address,
-        port: 80
+        port: <port>
 
     })
 
     const request = `
 GET / HTTP/1.1
-Host: discord.com
+Host: HOST
 `.slice(1)
 
     socket.write(request)
